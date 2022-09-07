@@ -11,3 +11,6 @@ This will be referred to later in `.emacs` as ```path-to-elixir-ls/release```
 ## Helpful commands that I haven't binded
 To bring up function docs in a new pane
 * ```M-x lsp-describe-thing-at-point```  
+## Helpful docs
+https://emacs-lsp.github.io/lsp-ui/
+https://emacs-lsp.github.io/lsp-mode/
