@@ -41,6 +41,11 @@
 ;; comment line
 (global-set-key (kbd "C-x c") 'comment-line)
 
+;; elixir format hook
+(add-hook 'elixir-mode-hook
+        (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
+)
+
 ;; Disable stuff
 (menu-bar-mode -1)
 (tool-bar-mode -1)
