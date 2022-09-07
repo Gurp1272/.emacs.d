@@ -7,10 +7,7 @@
 ```cd elixir-ls``` (that you just cloned)  
 ```mix deps.get```  
 ```mix elixir_ls.release```  
-This will be referred to later in `.emacs` as ```path-to-elixir-ls/release```  
-## Helpful commands that I haven't binded -- yet
-To bring up function docs in a new pane
-* ```M-x lsp-describe-thing-at-point```  
+This will be referred to later in `.emacs` as ```path-to-elixir-ls/release```   
 ## Helpful docs
 https://emacs-lsp.github.io/lsp-ui/  
 https://emacs-lsp.github.io/lsp-mode/
