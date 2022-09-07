@@ -38,6 +38,9 @@
 ;; describe thing at point
 (global-set-key (kbd "C-x j d") 'lsp-describe-thing-at-point)
 
+;; comment line
+(global-set-key (kbd "C-x c") 'comment-line)
+
 ;; Disable stuff
 (menu-bar-mode -1)
 (tool-bar-mode -1)
