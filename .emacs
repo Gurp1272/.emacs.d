@@ -14,7 +14,7 @@
  '(custom-safe-themes
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(package-selected-packages
-   '(yasnippet which-key use-package spacemacs-theme popup lsp-ui lsp-treemacs flycheck elixir-mode dashboard counsel-tramp counsel-projectile company async)))
+   '(windresize yasnippet which-key use-package spacemacs-theme popup lsp-ui lsp-treemacs flycheck elixir-mode dashboard counsel-tramp counsel-projectile company async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,6 +24,16 @@
 
 ;; Full screen on startup
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; ace window
+(global-set-key (kbd "M-m") 'ace-select-window)
+(setq aw-dispatch-always t)
+
+;; Treemacs
+(global-set-key (kbd "M-0") 'treemacs-select-window)
+
+;; Windresize
+(global-set-key (kbd "C-x w") 'windresize)
 
 ;; Disable stuff
 (menu-bar-mode -1)
