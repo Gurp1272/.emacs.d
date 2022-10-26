@@ -1,6 +1,6 @@
 (require 'package)
 ;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-prioriti>
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
@@ -14,7 +14,7 @@
  '(custom-safe-themes
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(package-selected-packages
-   '(windresize yasnippet which-key use-package spacemacs-theme popup lsp-ui lsp-treemacs flycheck elixir-mode dashboard counsel-tramp counsel-projectile company async)))
+   '(xclip smartparens js2-mode windresize yasnippet which-key use-package spacemacs-theme popup>
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -44,7 +44,10 @@
 ;; elixir format hook
 (add-hook 'elixir-mode-hook
         (lambda () (add-hook 'before-save-hook 'elixir-format nil t))
-)
+        )
+
+;; javascript mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Disable stuff
 (menu-bar-mode -1)
@@ -53,6 +56,10 @@
 (which-key-mode 1)
 (ivy-mode 1)
 (yas-minor-mode 1)
+(smartparens-global-mode 1)
+;; Set stuff
+(setq gc-cons-threshold 10000000)
+(setq read-process-output-max (* 1024 1024))
 
 ;; Emacs dashboard
 (require 'dashboard)
@@ -66,7 +73,7 @@
 ;; Keybindings
 (global-set-key (kbd "C-x j t") 'projectile-grep)
 (global-set-key (kbd "C-x j f") 'projectile-find-file)
-
+           
 ;; Custom
 (defun smart-beginning-of-line ()
   (interactive)
@@ -92,7 +99,8 @@
   :hook
   (prog-mode . global-company-mode)
  :config
-(setq company-backends '(company-keywords,
+(setq company-backends '(company-capf,
+                         company-keywords,
                          company-semantic,
                          company-files,
                          company-etags,
@@ -131,4 +139,4 @@
   (elixir-mode . lsp)
   :init
   '(lsp-mode)
-  (add-to-list 'exec-path "/path-to-elixir-ls/release"))
+  (add-to-list 'exec-path "/root/.elixir-ls/elixir-ls/release"))
