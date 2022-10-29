@@ -1,0 +1,2 @@
+;; Generated package description from smartparens.el  -*- no-byte-compile: t -*-
+(define-package "smartparens" "4.7.1" "Automatic insertion, wrapping and paredit-like navigation with user defined pairs." 'nil :keywords '("abbrev" "convenience" "editing") :authors '(("Matus Goljer" . "matus.goljer@gmail.com")) :maintainer '("Matus Goljer" . "matus.goljer@gmail.com") :url "https://github.com/Fuco1/smartparens")
